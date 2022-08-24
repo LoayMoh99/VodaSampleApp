@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
             rvUsersearch.adapter=adapter
 
             btnSearch.setOnClickListener {
-                print("Button Search")
                 searchUser()
             }
 
