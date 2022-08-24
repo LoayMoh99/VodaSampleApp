@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:hint="search"
+            android:hint="Search"
             android:inputType="text"
             android:maxLines="1"
 
@@ -58,15 +58,28 @@
 
     <ProgressBar
         android:id="@+id/pb_search"
+        style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:visibility="gone"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/error_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="35dp"
+        android:fontWeight="400"
+        android:text="TextView"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:gravity="center"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,11 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         notifyDataSetChanged()
     }
 
+    fun setError(){
+        list.clear()
+        notifyDataSetChanged()
+    }
+
     inner class UserViewHolder(private val binding : ItemUserBinding) : RecyclerView.ViewHolder(binding.root){
       fun bind(user: User){
           binding.apply {

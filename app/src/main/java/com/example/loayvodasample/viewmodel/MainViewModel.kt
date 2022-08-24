@@ -24,11 +24,22 @@ class MainViewModel: ViewModel() {
                 ) {
                     if (response.isSuccessful){
                         listUsers.postValue(response.body()!!.items)
+                    } else {
+                        Log.e("Failure" ,"Failed")
+                        val noInternetList = ArrayList<User>()
+                        val noInternetUser = User(id=-1, login = "", avatar_url = "")
+                        noInternetList.add(noInternetUser)
+                        listUsers.postValue(noInternetList)
                     }
                 }
 
                 override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                  Log.d("Failure" ,t.message.toString())
+                    val noInternetList = ArrayList<User>()
+                    val noInternetUser = User(id=-1, login = "", avatar_url = "")
+                    noInternetList.add(noInternetUser)
+                    listUsers.postValue(noInternetList)
+                    Log.e("Failure" ,t.message.toString())
+
                 }
 
             })
@@ -38,3 +49,5 @@ class MainViewModel: ViewModel() {
         return listUsers
     }
 }
+
+
