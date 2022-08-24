@@ -1,4 +1,4 @@
-package com.example.loayvodasample.views
+package com.example.loayvodasample.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData

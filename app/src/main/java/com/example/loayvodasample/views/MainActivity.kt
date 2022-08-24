@@ -1,11 +1,13 @@
 package com.example.loayvodasample.views
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.loayvodasample.databinding.ActivityMainBinding
+import com.example.loayvodasample.viewmodel.MainViewModel
+import com.example.loayvodasample.viewmodel.UserAdapter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -13,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: UserAdapter
 
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
@@ -20,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         adapter= UserAdapter()
         adapter.notifyDataSetChanged()
-        viewModel=ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(MainViewModel::class.java)
+        viewModel= ViewModelProvider(this,ViewModelProvider.NewInstanceFactory())[MainViewModel::class.java]
 
         binding.apply {
             rvUsersearch.layoutManager = LinearLayoutManager(this@MainActivity)

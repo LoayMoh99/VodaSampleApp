@@ -1,5 +1,6 @@
-package com.example.loayvodasample.views
+package com.example.loayvodasample.viewmodel
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,13 +11,14 @@ import com.example.loayvodasample.databinding.ItemUserBinding
 
 class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     private val list = ArrayList<User>()
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(users: ArrayList<User>){
         list.clear()
         list.addAll(users)
         notifyDataSetChanged()
     }
 
-    inner class UserViewHolder(val binding : ItemUserBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class UserViewHolder(private val binding : ItemUserBinding) : RecyclerView.ViewHolder(binding.root){
       fun bind(user: User){
           binding.apply {
               Glide.with(itemView)
