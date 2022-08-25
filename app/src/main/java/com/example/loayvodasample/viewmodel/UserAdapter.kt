@@ -11,7 +11,7 @@ import com.example.loayvodasample.databinding.ItemUserBinding
 
 class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     private val list = ArrayList<User>()
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint("NotifyDataSetChanged") //Ignored: such that we don't remove or access item alone yet (for now at least)
     fun setList(users: ArrayList<User>){
         list.clear()
         list.addAll(users)
