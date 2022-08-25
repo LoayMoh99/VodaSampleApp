@@ -1,7 +1,3 @@
 package com.example.loayvodasample.data.model
 
-data class User (
-    val login: String,
-    val id:Int,
-    val avatar_url: String
-    )
+data class User (val login: String, val id:Int, val avatar_url: String)

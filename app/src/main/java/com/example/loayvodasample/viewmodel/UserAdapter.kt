@@ -18,7 +18,7 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         notifyDataSetChanged()
     }
 
-    fun setError(){
+    fun clearList(){
         list.clear()
         notifyDataSetChanged()
     }
