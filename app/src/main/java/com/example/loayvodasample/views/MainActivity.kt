@@ -76,6 +76,9 @@ class MainActivity : AppCompatActivity() {
                 if (query.isNotEmpty()) {
                     viewModel.setSearchUsers(query)
                 }
+                else {
+                    binding.pbSearch.visibility = View.GONE
+                }
             }
         }
         else {
